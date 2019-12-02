@@ -10,7 +10,18 @@ import Foundation
 
 struct Challenge {
     
+    // function was made for illustration purposes - not a part of the app logic
     func addTwoNumbers(num1: Int, num2: Int) -> Int {
         return num1 + num2
     }
+    
+    // user inputs 11,000 feet elevation
+    // user inputs 5 weeks
+    func calculateWeeklyTraining( for metric: Double,
+                                  and weeks: Int) -> Int {
+        
+        return Int(metric) / weeks // average metris (elevation, distance) per week 
+    }
+    
+    
 }

@@ -37,7 +37,7 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
         // arrange the test in this format ALWAYS.. and applies to all test UIs
         
 // arrange(given) - setup constants, variables and the (system under test)
-        // sut ~ means literally system on the test
+        // sut ~ means literally system under test
         let sut = Challenge()
         let num1 = 10
         let num2 = 5
@@ -51,6 +51,24 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
             // use command u to run test
         
     XCTAssertEqual(expectedResult, result, "\(result) should be \(expectedResult)")
+    }
+    
+    func testCalculateWeeklyTraining() {
+        // 000_000 not 000,000 it is not valid code
+        // arrange
+        let sut = Challenge() // creating an instance of challenge
+        let sutExpectAverage = 2320 // feet elevation per week
+        let metric = 11_602 // overal elevation feet challenge
+        let numberOfWeeksForChallenge = 5 // weeks
+        
+        
+        //act
+        let weeklyTraining = sut.calculateWeeklyTraining(for: Double(metric), and: numberOfWeeksForChallenge)
+        
+        //assert
+        // want to test the Expectedaverage is equal to the weeklyTraining
+        XCTAssertEqual(sutExpectAverage, weeklyTraining, "weeklyTraining: \(weeklyTraining) should be equal to sutExpectAverage:\(sutExpectAverage)")
+        
     }
 
 }
