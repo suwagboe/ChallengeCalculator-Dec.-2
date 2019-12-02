@@ -19,8 +19,19 @@ struct Challenge {
     // user inputs 5 weeks
     func calculateWeeklyTraining( for metric: Double,
                                   and weeks: Int) -> Int {
+        // once you check that the function works and and the test applies then you should always apply a test for edge cases. to take if the worst possible senario
         
-        return Int(metric) / weeks // average metris (elevation, distance) per week 
+        // need to guard againtst user entering 0
+        
+        // refactor to guard against 0 weeks
+        guard weeks > 0 else { return -1 }
+        // we used -1 because there cannot be a negative amount of weeks
+        
+        
+        // red (fails test), green (passes test), refactor (rewrite, optimize)
+        
+        return Int(metric) / weeks // average metris (elevation, distance) per week
+        
     }
     
     

@@ -32,6 +32,7 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
     
     // should be done for each function
     // keep the test and run each time
+    //Always different test function.. never do multiple in one
     func testAddTwoNumbers() {
     
         // arrange the test in this format ALWAYS.. and applies to all test UIs
@@ -68,7 +69,33 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
         //assert
         // want to test the Expectedaverage is equal to the weeklyTraining
         XCTAssertEqual(sutExpectAverage, weeklyTraining, "weeklyTraining: \(weeklyTraining) should be equal to sutExpectAverage:\(sutExpectAverage)")
+    }
+    
+    // write a test to validate that if user entered 0 the system should return the guard -1
+    func testEdgeCase0() {
+        // arrange
+        let sut = Challenge()
+        let enteredZero = -1
+       // let sutExpectedAverage = 0
+        let metric = 11_602
+        let numberOfWeeksForChallenge = 0
+        
+        //act
+        let expectedOutput = sut.calculateWeeklyTraining(for: Double(metric), and: numberOfWeeksForChallenge)
+        
+        //assert
+        XCTAssertEqual(enteredZero, expectedOutput, "the user inputed \(numberOfWeeksForChallenge) which will cause the answer to be \(enteredZero)")
+        
+        // TDD - TEST DRIVEN DEVELOPMENT definition
+        /*
+         - you start writing a unit test until it fails or compiler error
+         - then go to production code e.X ~ challenge.swift file,
+         - fix the failer
+         - until the test passes, contiune writing unit test until failure again and contiune the cycle.
+         */
         
     }
+    
+    
 
 }

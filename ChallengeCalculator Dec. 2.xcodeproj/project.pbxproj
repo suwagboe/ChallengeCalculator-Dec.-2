@@ -81,11 +81,11 @@
 		3C8EC3A9239566E700967583 /* ChallengeCalculator Dec. 2 */ = {
 			isa = PBXGroup;
 			children = (
-				3C8EC3D023956ADF00967583 /* Challenge.swift */,
 				3C8EC3AA239566E700967583 /* AppDelegate.swift */,
 				3C8EC3AC239566E700967583 /* SceneDelegate.swift */,
 				3C8EC3AE239566E700967583 /* ViewController.swift */,
 				3C8EC3B0239566E700967583 /* Main.storyboard */,
+				3C8EC3D023956ADF00967583 /* Challenge.swift */,
 				3C8EC3B3239566E800967583 /* Assets.xcassets */,
 				3C8EC3B5239566E800967583 /* LaunchScreen.storyboard */,
 				3C8EC3B8239566E800967583 /* Info.plist */,
