@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,91 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ChallengeCalculator_Dec__2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IZE-pu-UbV">
+                                <rect key="frame" x="131.5" y="84" width="151" height="32"/>
+                                <segments>
+                                    <segment title="Elevation"/>
+                                    <segment title="Distance"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentsControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="MSV-WV-PXp"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter metric (e.x: elevation, distance challenge)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ENK-VS-arI">
+                                <rect key="frame" x="20" y="135" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metric (elevation, distance)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBQ-EK-dKV">
+                                <rect key="frame" x="20" y="177" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter number of weeks for challenge" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GhY-Ob-QHB">
+                                <rect key="frame" x="20" y="218" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="number of weeks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lnT-lY-ikF">
+                                <rect key="frame" x="20" y="260" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRy-qi-Gdv">
+                                <rect key="frame" x="138.5" y="321" width="137" height="30"/>
+                                <state key="normal" title="Calculate Challenge"/>
+                                <connections>
+                                    <action selector="calculateChallengePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yz4-sC-tf2"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="average metric for the week" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IF-KL-qMJ">
+                                <rect key="frame" x="20" y="371" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6IF-KL-qMJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="65L-bP-fWT"/>
+                            <constraint firstItem="lnT-lY-ikF" firstAttribute="top" secondItem="GhY-Ob-QHB" secondAttribute="bottom" constant="8" id="6MD-kA-82t"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sBQ-EK-dKV" secondAttribute="trailing" constant="20" id="AMQ-0R-Ngp"/>
+                            <constraint firstItem="GhY-Ob-QHB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="CVi-So-3ey"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GhY-Ob-QHB" secondAttribute="trailing" constant="20" id="ChL-AU-C58"/>
+                            <constraint firstItem="GhY-Ob-QHB" firstAttribute="top" secondItem="sBQ-EK-dKV" secondAttribute="bottom" constant="20" id="D2w-9g-3a4"/>
+                            <constraint firstItem="JRy-qi-Gdv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nf1-Ws-eSO"/>
+                            <constraint firstItem="lnT-lY-ikF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QzU-Iu-cnk"/>
+                            <constraint firstItem="sBQ-EK-dKV" firstAttribute="top" secondItem="ENK-VS-arI" secondAttribute="bottom" constant="8" id="WwX-8u-mGg"/>
+                            <constraint firstItem="JRy-qi-Gdv" firstAttribute="top" secondItem="lnT-lY-ikF" secondAttribute="bottom" constant="40" id="ZJO-FU-Y3T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lnT-lY-ikF" secondAttribute="trailing" constant="20" id="avk-Kf-AYP"/>
+                            <constraint firstItem="ENK-VS-arI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cNq-0t-j7X"/>
+                            <constraint firstItem="IZE-pu-UbV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fJF-bE-bJ0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6IF-KL-qMJ" secondAttribute="trailing" constant="20" id="h6v-Hf-KTh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ENK-VS-arI" secondAttribute="trailing" constant="20" id="mQE-Nm-cyf"/>
+                            <constraint firstItem="sBQ-EK-dKV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mkL-2F-UDF"/>
+                            <constraint firstItem="6IF-KL-qMJ" firstAttribute="top" secondItem="JRy-qi-Gdv" secondAttribute="bottom" constant="20" id="zIQ-hm-JQZ"/>
+                            <constraint firstItem="ENK-VS-arI" firstAttribute="top" secondItem="IZE-pu-UbV" secondAttribute="bottom" constant="20" id="zbR-iS-eoI"/>
+                            <constraint firstItem="IZE-pu-UbV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="zbn-M2-tVC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="6IF-KL-qMJ" id="VDm-8p-1za"/>
+                        <outlet property="metricTextField" destination="ENK-VS-arI" id="2hD-X7-pf6"/>
+                        <outlet property="numberOfWeeksTextField" destination="GhY-Ob-QHB" id="2qE-oS-snO"/>
+                        <outlet property="segmentsControl" destination="IZE-pu-UbV" id="Fth-JM-3TU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="103.79464285714285"/>
         </scene>
     </scenes>
 </document>

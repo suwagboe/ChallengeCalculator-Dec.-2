@@ -34,5 +34,19 @@ struct Challenge {
         
     }
     
+    // production code.. gets shipped with the app.. - part of the application 
+    func averageTrainingPerWeek(challengeMetric: Int,
+                                numberOfWorkoutDays: Int) -> Int {
+        
+        // guard against zero, letters
+        // refactor to guardfor valid days of the week 1...7
+        
+        // created a range.. and numberOfWorkoutDays needs to contain 1...7
+        guard (1...7).contains(numberOfWorkoutDays) else { return -1 }
+        
+        // proper refactoring is backed with unit testing..
+        return challengeMetric / numberOfWorkoutDays
+    }
+    
     
 }

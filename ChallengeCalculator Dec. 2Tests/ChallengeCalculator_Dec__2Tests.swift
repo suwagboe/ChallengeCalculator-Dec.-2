@@ -38,7 +38,7 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
         // arrange the test in this format ALWAYS.. and applies to all test UIs
         
 // arrange(given) - setup constants, variables and the (system under test)
-        // sut ~ means literally system under test
+        // sut ~ means literally system under test which is literlly the class.. where is the compiler looks to find the function that it needs to test
         let sut = Challenge()
         let num1 = 10
         let num2 = 5
@@ -93,7 +93,23 @@ class ChallengeCalculator_Dec__2Tests: XCTestCase {
          - fix the failer
          - until the test passes, contiune writing unit test until failure again and contiune the cycle.
          */
+    }
+    
+    func testAverageDailyMetric() {
+        // arrange
         
+        let sut = Challenge()
+        let sutWeeklyTotalMetric = 2320 // total elevation
+        let expectedDailyAverage = 773 // elevation per day.. what the return should be.. the answer
+        let numberOfWorkoutDays = 3 // the amount of day
+        
+        //act
+        // this is what the function will actually return
+        let averageDailyTraining = sut.averageTrainingPerWeek(challengeMetric: sutWeeklyTotalMetric, numberOfWorkoutDays: numberOfWorkoutDays)
+        
+        // assert
+        // only happens if the test fails will the string get printed
+        XCTAssertEqual(averageDailyTraining, expectedDailyAverage, "\(averageDailyTraining) should be equal to \(expectedDailyAverage)")
     }
     
     
